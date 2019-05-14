@@ -1,0 +1,6 @@
+mixin json()
+  - var oldbuf = buf; buf = [];
+  block
+  - var res = JSON.stringify(JSON.parse(buf.join('')));
+  - buf = oldbuf;
+  != res
